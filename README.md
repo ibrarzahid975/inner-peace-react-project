@@ -15,7 +15,6 @@ It showcases mindfulness practices, resources, and tools with a clean, responsiv
 ## Tech Stack
 
 - React.js
-- HTML5 & CSS3
 - JavaScript
 
 ## Installation & Usage
