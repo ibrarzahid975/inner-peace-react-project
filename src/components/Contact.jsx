@@ -1,6 +1,55 @@
 import React from "react";
 
 function Contact() {
+  const contactInfo = [
+    {
+      icon: "📍",
+      title: "Visit Us",
+      details: (
+        <>
+          123 Wellness Street
+          <br />
+          Mindful City, MC 12345
+        </>
+      ),
+    },
+    {
+      icon: "📧",
+      title: "Email",
+      details: (
+        <>
+          hello@innerpeace.com
+          <br />
+          support@innerpeace.com
+        </>
+      ),
+    },
+    {
+      icon: "📞",
+      title: "Phone",
+      details: (
+        <>
+          +1 (555) 123-4567
+          <br />
+          Mon-Fri, 9am-6pm EST
+        </>
+      ),
+    },
+    {
+      icon: "💬",
+      title: "Live Chat",
+      details: "Available 24/7 for urgent support",
+    },
+  ];
+
+  const socialLinks = ["f", "t", "i", "l"];
+
+  const formFields = [
+    { label: "Your Name", id: "name", type: "text" },
+    { label: "Email Address", id: "email", type: "email" },
+    { label: "Subject", id: "subject", type: "text" },
+  ];
+
   return (
     <section id="contact">
       <div className="contact-container">
@@ -10,81 +59,39 @@ function Contact() {
           {/* Contact Info */}
           <div className="contact-info">
             <h3>Get in Touch</h3>
-
-            <div className="info-item">
-              <div className="info-icon">📍</div>
-              <div className="info-text">
-                <h4>Visit Us</h4>
-                <p>
-                  123 Wellness Street
-                  <br />
-                  Mindful City, MC 12345
-                </p>
+            {contactInfo.map((item, index) => (
+              <div className="info-item" key={index}>
+                <div className="info-icon">{item.icon}</div>
+                <div className="info-text">
+                  <h4>{item.title}</h4>
+                  <p>
+                    {item.details}
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <div className="info-item">
-              <div className="info-icon">📧</div>
-              <div className="info-text">
-                <h4>Email</h4>
-                <p>
-                  hello@innerpeace.com
-                  <br />
-                  support@innerpeace.com
-                </p>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <div className="info-icon">📞</div>
-              <div className="info-text">
-                <h4>Phone</h4>
-                <p>
-                  +1 (555) 123-4567
-                  <br />
-                  Mon-Fri, 9am-6pm EST
-                </p>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <div className="info-icon">💬</div>
-              <div className="info-text">
-                <h4>Live Chat</h4>
-                <p>Available 24/7 for urgent support</p>
-              </div>
-            </div>
+            ))}
 
             <div className="social-links">
-              <a href="#" className="social-link">f</a>
-              <a href="#" className="social-link">t</a>
-              <a href="#" className="social-link">i</a>
-              <a href="#" className="social-link">l</a>
+              {socialLinks.map((symbol, index) => (
+                <a key={index} href="#" className="social-link">{symbol}</a>
+              ))}
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="contact-form">
-            <h3 style={{ color: "var(--primary)", fontSize: "1.8rem", marginBottom: "2rem" }}>
+            <h3>
               Send a Message
             </h3>
             <form>
-              <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" name="name" required />
-              </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
-              </div>
-
-              <div className="form-group">
+              {formFields.map((field) => (
+                <div className="form-group" key={field.id}>
+                  <label htmlFor={field.id}>{field.label}</label>
+                  <input type={field.type} id={field.id} name={field.id} required />
+                </div>
+              ))}
+              <div className="form-group" >
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
               </div>

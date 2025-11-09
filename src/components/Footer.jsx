@@ -1,13 +1,20 @@
 import React from "react";
 
 function Footer() {
+    const footerLinks = [
+    { id: 1, href: "#privacy", label: "Privacy Policy" },
+    { id: 2, href: "#terms", label: "Terms of Service" },
+    { id: 3, href: "#support", label: "Support" },
+  ];
   return (
     <footer>
       <div className="footer-content">
         <div className="footer-links">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Service</a>
-          <a href="#support">Support</a>
+          {footerLinks.map((link) => (
+            <a key={link.id} href={link.href}>
+              {link.label}
+            </a>
+          ))}
         </div>
         <div className="copyright">
           <p>
@@ -17,7 +24,6 @@ function Footer() {
               href="https://www.tooplate.com"
               target="_blank"
               rel="nofollow noopener"
-              style={{ color: "var(--accent)", textDecoration: "none", transition: "color 0.3s ease" }}
             >
               Tooplate
             </a>

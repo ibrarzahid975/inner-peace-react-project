@@ -13,7 +13,7 @@ Free HTML CSS Template
 /* CSS Document */
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 * {
@@ -122,7 +122,7 @@ nav {
 	gap: 2.5rem;
 }
 
-.nav-links a {
+.nav-links a.nav-link {
 	text-decoration: none;
 	color: var(--dark);
 	font-weight: 500;
@@ -134,13 +134,13 @@ nav {
 	border: 1px solid transparent;
 }
 
-.nav-links a:hover {
+.nav-links a.nav-link:hover {
 	color: var(--primary);
 	background: rgba(45, 90, 135, 0.05);
 	border-color: rgba(45, 90, 135, 0.2);
 }
 
-.nav-links a.active {
+.nav-links a.nav-link.active {
 	color: white;
 	background: linear-gradient(135deg, #4a90e2 0%, #F1E5AC 100%);
 	border-color: #4a90e2;
@@ -1316,6 +1316,7 @@ nav {
 	padding: 2rem;
 }
 
+.contact-form h3,
 .contact-info h3 {
 	color: var(--primary);
 	margin-bottom: 2rem;
@@ -1486,6 +1487,8 @@ footer {
 	transition: color 0.3s ease;
 }
 
+
+
 .footer-links a:hover {
 	color: var(--accent);
 }
@@ -1496,6 +1499,16 @@ footer {
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	font-size: 0.9rem;
 	color: rgba(255, 255, 255, 0.7);
+}
+
+.copyright a {
+	color: var(--accent); 
+	text-decoration: none; 
+	transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+	color: var(--secondary); 
 }
 
 /* Mobile Responsive */
@@ -1520,7 +1533,7 @@ footer {
 		z-index: 999;
 	}
 
-	.nav-links.active {
+	.nav-links.open {
 		right: 0;
 	}
 
